@@ -1,0 +1,31 @@
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Client Product Form</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/css/CategoryForm.css">
+  </head>
+  <body>
+    <div class="formDiv">
+      <div class="productDiv">
+        <p class="headP">Category Entry Form</p>
+          <form action="#" method="POST">
+            {% csrf_token %}
+            {% comment %} {{form}} {% endcomment %}
+            <label for="category_name">Category Name: </label><br>
+            <input type="text" name="category_name" id="category_name"><br><br>
+
+            <label for="category_thumbnail">Category Thumbnail: </label><br>
+            <input type="file" name="category_thumbnail" id="category_thumbnail"><br><br>
+
+          <input type="button" onclick="category_form()" value="Submit">
+        </form>
+      </div>
+    </div>
+    </form>
+    <script src="{% static 'js/portalData.js' %}"></script>
+  </body>
+</html>

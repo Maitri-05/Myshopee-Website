@@ -1,0 +1,203 @@
+{% extends 'includes/base.html' %}
+{% block page_title %}Product Page{% endblock %}
+{% block page_content %}
+<div class="prdContent">
+  {% if products %}
+    {% for product in products %}
+      <div class="main_div">
+        <div class="imgDiv">
+          {% if product.thumbnail %}
+          <a href="{% url 'product_detail' product.id %}">
+            <img src="/media/{{ product.thumbnail }}" width="250" height="140px" />
+          </a>
+          {% else %} 
+            <p>No image available</p>
+          {% endif %}
+        </div>
+        <div>
+          <p class="text_div"><span>{{ product.name }}</span><br><span>₹: {{ product.price }}</span></p>
+          <span class="text_clr">About:
+            {{ product.description }}<br>
+            <span>Minimum Qty : {{product.min_order}}</span>
+          </span>
+          <div class="btn-div">
+            {% csrf_token %}
+            <p><input type="submit" name="button" value="ADD TO CART" class="btn-left" /><input type="submit" name="button" id="delete_id" onclick="delete_prd({{product.id}})" value="DELETE" class="btn-right">
+            </p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  {% endif %}    
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} <html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Products</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="static/css/style.css" rel="stylesheet">
+  </head>
+  <body>
+   
+    <div class="navbar">
+      <!-- <img src="static/images/shopLogo.avif"  width="80" height="0px" /> -->
+      <a class="navBrand" href="#">ShopIT.com</a>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <form action="">
+        <input type="search" placeholder="Search here !" class="navSearch" />
+      </form>
+    </div>
+<!-- slide one -->
+    <div class="prdContent">
+     
+      <div class="main_div">
+        <div class="imgDiv">
+          <img src="static/images/productTwo.jpg"  width="250" height="140px" />
+        </div>
+        <div>
+          <p class="text_div">CBO Oil</p>
+          <p class="text_clr">
+            Strengthens & helping you maintain the shine and gloss of your hair
+          </p>
+          <div>
+            <p><input type="submit" name="button" value="BUY NOW" class="btn" /></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="main_div">
+        <div class="imgDiv">
+          <img src="static/images/hairSerum.jpg"  width="250" height="140px" />
+        </div>
+        <div>
+          <p class="text_div">GRO</p>
+          <p class="text_clr">
+            Dare to Be Different with Cool Hair Statements
+          </p>
+          <div>
+            <input type="submit" name="button" value="BUY NOW" class="btn" />
+          </div>
+        </div>
+      </div>
+
+      <div class="main_div">
+        <div class="imgDiv">
+          <img src="static/images/productFour.jpg"  width="250" height="140px" />
+        </div>
+        <div>
+          <p class="text_div">ADIDAS</p>
+          <p class="text_clr">
+            ADIDAS : Impossible is Nothing.Go faster, go stronger, never stop.
+          </p>
+          <div>
+            <input type="submit" name="button" value="BUY NOW" class="btn" />
+          </div>
+        </div>
+      </div>
+
+      <div class="main_div">
+        <div class="imgDiv">
+          <img src="static/images/nike.jpg"  width="250" height="140px" />
+        </div>
+        <div>
+          <p class="text_div">NIKE</p>
+          <p class="text_clr">
+            Reach new heights and unleash your potential with Nike.
+          </p>
+          <input type="submit" name="button" value="BUY NOW" class="btn" />
+        </div>
+      </div>
+    </div>
+
+<!-- slide two -->
+
+    <div class="prdSlideTwo">
+     
+      <div class="outerDiv">
+        <div class="imageDiv">
+          <img src="static/images/productThree.jpg"  width="250" height="140px" />
+        </div>
+        <div>
+          <p class="textDiv">PARFUM</p>
+          <p class="textClr">
+            Spray on Our Perfume and Become the Life of the Scent-Sational Party
+          </p>
+          <div>
+            <p><input type="submit" name="button" value="BUY NOW" class="btnTwo" /></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="outerDiv">
+        <div class="imageDiv">
+          <img src="static/images/perfume.png"  width="250" height="140px" />
+        </div>
+        <div>
+          <p class="textDiv">CHANEL</p>
+          <p class="textClr">
+            The Scent That Gets The Town Talking.Level Up, Smell Up!
+          </p>
+          <div>
+            <p><input type="submit" name="button" value="BUY NOW" class="btnTwo" /></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="outerDiv">
+        <div class="imageDiv">
+          <img src="static/images/newGloss.avif"  width="250" height="140px" />
+        </div>
+        <div>
+          <p class="textDiv">LAKME</p>
+          <p class="textClr">
+            Glossy Lips, Confident You, Georgeous You!
+          </p>
+          <div>
+            <input type="submit" name="button" value="BUY NOW" class="btnTwo" />
+          </div>
+        </div>
+      </div>
+
+      <div class="outerDiv">
+        <div class="imageDiv">
+          <img src="static/images/lipstick.jpg"  width="250" height="140px" />
+        </div>
+        <div>
+          <p class="textDiv">MAYBELLINE</p>
+          <p class="textClr">
+            Maybe she’s born with it, maybe it’s Maybelline.
+          </p>
+          <div>
+            <p><input type="submit" name="button" value="BUY NOW" class="btnTwo" /></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </body>
+</html>  {% endcomment %}
+

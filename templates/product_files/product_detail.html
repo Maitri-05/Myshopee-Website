@@ -1,0 +1,12 @@
+{% extends 'includes/base.html' %}
+{% block page_title %}Product detail Page{% endblock %}
+{% block page_content %}
+
+<h1>Product ID :{{ product.id }}</h1>
+<h3>Product Name :{{ product.name }}</h3>
+<h3>Product Price: ${{ product.price }}</h3>
+<img src="{{ product.thumbnail }}">
+<h3>Product Description :{{ product.description }}</h3>
+<h3>Minimum Order: {{ product.min_order }}</h3>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Edit Product Form</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/css/productForm.css">
+  </head>
+  <body>
+    {% for i in products %}
+      <div class="formDiv">
+        <div class="productDiv">
+          <p class="headP">Edit Product Form</p>
+          <form action="#" method="POST" name="registerForm" class="registerForm" id="registerForm">
+            {% csrf_token %}
+            <label for="product_id">Product ID: </label><br>
+            <input type="number" value={{i.id}} name="product_id" id="product_id"><br><br>
+
+            <label for="product_name">Product Name: </label><br>
+            <input type="text" value={{i.product_name}} name="product_name" id="product_name"><br><br>
+
+            <label for="product_price">Product Price: </label><br>
+            <input type="number" value={{i.product_price}} name="product_price" id="product_price"><br><br>
+
+            <label for="product_description">Product Description: </label><br>
+            <input type="text" value={{i.product_description}} name="product_description" id="product_description"><br><br> 
+
+            <label for="min_order_quantity">Minimum Order Quantity: </label><br>
+            <input type="number" value={{i.min_order_quantity}} name="min_order_quantity" id="min_order_quantity"><br><br>
+
+            </select><br><br>
+            <button onclick="update_prd_frm()" type="submit" class="btn-reg">UPDATE</button><Br>
+          </form>
+        </div>
+      </div>
+    {% endfor %}
+    <script src="{% static 'js/portalData.js' %}"></script>
+  </body>
+</html>

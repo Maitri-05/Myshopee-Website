@@ -1,0 +1,24 @@
+<div class="navbar">
+  <!-- <img src="static/images/shopLogo.avif"  width="80" height="0px" /> -->
+  <a class="navBrand" href="#">ShopIT.com</a>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="#">Orders</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  {% if showName %}
+    <p>Hello, {{name}}</p>
+    {% else %}
+    <a href="/login-portal">hello,Sign in</a>
+    {% endif %}
+  <form action="/">
+    <input type="button" class="logout-btn" value="LOG OUT" onclick="log_out()" />
+    <select id="category" name="category" onchange="category_options()" >
+      <option value="">Categories</option>
+      <option value="">{{category_name}}</option>
+    </select>
+    <input type="search" placeholder="Search here !" class="navSearch" />
+    <span><a href="register-portal">Become a Seller !!  </a></span>
+  </form>
+</div>

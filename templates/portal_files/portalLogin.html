@@ -1,0 +1,37 @@
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login Form</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/css/portalLogin.css">
+  </head>
+  <body>
+    <div class="formDiv">
+      
+      <div class="loginDiv">
+        <p class="headP">Client Login Portal</p>
+        <form action="#" method="POST" class="loginForm" id="loginForm">
+          {% csrf_token %}
+          <label for="position" class="pos">Position: </label><br>
+          <input type="radio" name="position" id="position">Admin
+          <input type="radio" name="position">Seller<br><br>
+          
+          
+          <label for="email" class="firstLabel">Email ID: </label><br>
+          <input type="email" name="email" id="email" class="inputfield"><br><br>
+
+          <label for="password">Password: </label><br>
+          <input type="password" name="password" id="password"  class="inputfield"><br><br>
+
+          <button onclick="login_client()" type="button" class="btn-log">Login</button><br><br>
+          <span class="linkP">New to MyShoppe ?</span>
+          <p class="linkP"><a href="register-portal">Register Here !!</a></p>
+        </form>
+      </div>
+  </div>
+    <script src="{% static 'js/portalData.js' %}"></script>
+  </body>
+</html>

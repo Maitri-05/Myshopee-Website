@@ -1,0 +1,55 @@
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Registration Form</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/css/portalRegister.css">
+  </head>
+  <body>
+    <div class="formDiv">
+      <div class="registerDiv">
+        <form action="#" method="POST" name="registerForm" class="registerForm" id="registerForm" onsubmit="return registerClient()">
+          {% csrf_token %}
+          <p class="headP">Registration Portal</p>
+          <label for="name">Name: </label><br>
+          <input type="text" name="name" id="name"><br><br>
+
+          <label for="mobile_number">Mobile Number: </label><br>
+          <input type="number" name="mobile_number" id="mobile_number"><br><br>
+
+          <label for="email">Email ID: </label><br>
+          <input type="email" name="email" id="email"><br><br>
+
+          <label for="password">Password: </label><br>
+          <input type="password" name="password" id="password"><br><br>
+
+          <label for="country">Country:</label><br>
+          <select name="country" id="country">
+            <option value="">Select Your Country</option>
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+            <option value="Australia">Australia</option>
+            <option value="Japan">Japan</option>
+          </select><br><br>
+          
+          <label for="city">City:</label><br>
+          <select name="city" id="city">
+            <option value="">Select Your State</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="NewYork">NewYork</option>
+            <option value="Sydney">Sydney</option>
+            <option value="Kyoto">Kyoto</option>
+          </select><br><br>
+          <button onclick="register_client()" type="button" class="btn-reg">Register</button><br>
+          <span class="linkP">Existing User ?</span>
+          <p class="linkP"><a href="login-portal">Log In Here !!</a></p>
+        </form>
+      </div>
+    </div>  
+
+    <script src="{% static 'js/portalData.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Registration Page</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="static/css/userLogin.css" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  </head>
+  <body>
+    <div class="registrationPg">
+      <div class="container">
+        <div class="row">
+          <div class="colOne backgroungImg">
+            <img src="static/images/background2.png"  height="100%" width="100%">
+          </div>
+
+          <div class="formDiv">
+            <div class="headDiv">
+              <span onclick="login()">LOGIN</span>
+              <span onclick="register()">REGISTER</span>
+              <hr id="line">
+            </div><br><br>
+            <div class="regDiv">
+
+              <form action="#" method="POST" class="loginForm" id="loginForm" >
+                {% csrf_token %} 
+                <p>Login IN to MyShopee</p>
+                <input type="email" name="username" id="emailid" placeholder="EMAIL ID"/>
+                <input type="password" name="password" id="Userpassword" placeholder="PASSWORD"/>
+                <button  onclick="login_user()" type="button" class="btn-log">Login</button>
+                <span><a href="">Forgot Password ?</a></span>
+                <p class="regP">New to MyShopee?</p>
+              </form>  
+
+              <form action="#" method="POST" name="registerForm" class="registerForm" id="registerForm" onsubmit="return registerUser()">
+                  {% csrf_token %} 
+                 <input type="text" name="name" id="name" placeholder="USERNAME"/>
+           
+                 <!-- <label for="phone">Phone: </label><br> -->
+                 <input type="number" name="phone" id="phone" placeholder="PHONE NUMBER" />
+           
+                 <!-- <label for="email">Email: </label><br> -->
+                 <input type="email" name="email" id="email" placeholder="EMAIL ID"/>
+           
+                 <!-- <label for="password">Password: </label><br> -->
+                 <input type="password" name="password" id="password" placeholder="PASSWORD"/>
+           
+                 <!-- <label for="address">Address: </label><br> -->
+                 <textarea name="address" id="address" cols="32" rows="5" placeholder="ADDRESS...."></textarea>
+           
+                 <!-- <label for="country">Country</label><br> -->
+                  
+                 <select name="country" id="country">
+                   <option value="">Select Your Country</option>
+                   <option value="India">India</option>
+                   <option value="USA">USA</option>
+                   <option value="Australia">Australia</option>
+                   <option value="Japan">Japan</option>
+                 </select
+                 ><br /><br />
+           
+                 <!-- <label for="city">City</label><br> -->
+                 <select name="city" id="city">
+                   <option value="">Select Your City</option>
+                   <option value="Mumbai">Mumbai</option>
+                   <option value="NewYork">NewYork</option>
+                   <option value="Sydney">Sydney</option>
+                   <option value="Kyoto">Kyoto</option>
+                 </select>
+           
+                 <button  onclick="register_user()" type="button" class="btn-reg">Register</button>
+               </form>  
+             </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <script src="static/js/loginJS.js"></script>
+    {% comment %} event.preventDefault() {% endcomment %}
+    {% comment %} else type="button" {% endcomment %}
+  </body>
+</html>

@@ -1,0 +1,136 @@
+/* Basic Reset */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+.backgroungImg{
+  display: flex;
+  height:40% ;
+  width:33%;
+  margin-top:10%; 
+  margin-left: 130px;
+  /* border: 2px solid black;  */
+}
+.registrationPg{
+  padding: 50px 0;
+  height: 100%;
+  background: radial-gradient(#d6d1d4,#bff0ba);
+}
+.formDiv{
+  background: #698e72;
+  width: 400px;
+  height: 520px;
+  /* border: 2px solid black; */
+  position: relative;
+  text-align: center;
+  padding: 20px 0;
+  margin-top:-18%; 
+  margin-left: 53% ;
+  box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+.headDiv span{
+  font-weight: bold;
+  padding: 0 10px;
+  color: #000;
+  cursor: pointer;
+  width: 150px;
+  display: inline-block;
+}
+.headDiv{
+  display: inline-block;
+}
+.formDiv form{
+  max-width: 400px;
+  max-height: 520px;
+  padding: 0 20px;
+  position: absolute; 
+  /* top: 100px; */
+  transition: transform 0.5s;
+}
+.registerForm  input{
+  width: 100%;
+  height: 30px;
+  margin: 10px 0;
+  padding: 0 10px;
+  outline: none;
+  border: 1px solid #698e72;
+}
+.registerForm  textarea{
+  width: 100%;
+  margin: 7px 0;
+  height: 50px;
+  padding: 0 10px;
+  outline: none;
+  border: 1px solid #698e72;
+}
+.registerForm select{
+  width: 100%;
+  height: 30px;
+  margin: 6px 0;
+  padding: 0 10px;
+  outline: none;
+  border: 1px solid #698e72;
+}
+.headP {
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 10px;
+}
+.regP {
+  font-size: 10px;
+}
+.loginForm #email{
+  margin-top: 60px;
+}
+.loginForm input{
+  width: 100%;
+  height: 35px;
+  margin: 15px 0;
+  padding: 0 10px;
+  outline: none;
+  border: 1px solid #698e72;
+}
+.loginForm textarea{
+  width: 100%;
+  /* margin: 7px 0; */
+  height: 50px;
+  padding: 0 10px;
+  outline: none;
+  border: 1px solid #698e72;
+}
+form .btn-log ,.btn-reg{
+  width: 85%;
+  /* width: 100%; */
+  height: 30px;
+  background:#404741 ;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  margin: 20px 0;
+}
+
+#loginForm{
+  left:-400px;
+}
+#registerForm{
+  left:0;
+}
+.loginForm a{
+  text-decoration: none;
+}
+#line{
+  width: 150px;
+  border: none;
+  background: #fff;
+  height: 3px;
+  margin-top: 8px;
+  transform: translateX(150px);
+  transition: transform 0.5s;
+}
