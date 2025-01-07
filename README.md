@@ -1,0 +1,1 @@
+This is my first Django eCommerce project which I am developing while learning web development . It includes features like product browsing, user login and accounts , seller login and accounts and a basic checkout functionality . It's a work in progress and a learning journey!
